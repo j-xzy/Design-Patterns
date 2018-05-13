@@ -1,15 +1,15 @@
 # 常用设计模式TypeScript版
 
-1. [创建型模式(creational)](##创建型模式(creational))
+1. [创建型模式(creational)](#创建型模式(creational))
 
-   - [Abstract Factory](##Abstract-Factory)
-   - [Builder](###Builder)
-   - [Factory Method](##Factory-Method)
-   - [Prototype](###Prototype)
-   - [Singleton](###Singleton)
+   - [Abstract Factory](#Abstract-Factory)
+   - [Builder](#Builder)
+   - [Factory Method](#Factory-Method)
+   - [Prototype](#Prototype)
+   - [Singleton](#Singleton)
 
-2. [结构型模式(Structural)](##结构型模式(Structural))
-3. [行为型模式(Behavioral)](##行为型模式(Behavioral))
+2. [结构型模式(Structural)](#结构型模式(Structural))
+3. [行为型模式(Behavioral)](#行为型模式(Behavioral))
 
 ## 创建型模式(creational)
 
