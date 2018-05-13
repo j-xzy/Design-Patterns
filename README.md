@@ -2,14 +2,14 @@
 
 1. [创建型模式(creational)](#创建型模式(creational))
 
-   - [Abstract Factory](#Abstract-Factory)
-   - [Builder](#Builder)
-   - [Factory Method](#Factory-Method)
-   - [Prototype](#Prototype)
-   - [Singleton](#Singleton)
+   - [Abstract Factory](#abstract-factory)
+   - [Builder](#builder)
+   - [Factory Method](#factory-method)
+   - [Prototype](#prototype)
+   - [Singleton](#singleton)
 
-2. [结构型模式(Structural)](#结构型模式(Structural))
-3. [行为型模式(Behavioral)](#行为型模式(Behavioral))
+2. [结构型模式(Structural)](#结构型模式(structural))
+3. [行为型模式(Behavioral)](#行为型模式(behavioral))
 
 ## 创建型模式(creational)
 
