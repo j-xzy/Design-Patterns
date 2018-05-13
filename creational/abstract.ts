@@ -1,43 +1,45 @@
-enum Side { North, East, South, West };
+namespace AbstractFactory {
 
-interface MapSite {
+  enum Side { North, East, South, West };
+
+  interface MapSite {
     enter(): void;
-}
+  }
 
-class Maze { }
+  class Maze { }
 
-class Wall implements MapSite {
+  class Wall implements MapSite {
     enter() { }
-};
+  }
 
-class Door implements MapSite {
+  class Door implements MapSite {
     constructor(r1: Room, r2: Room) { }
     enter() { }
     isOpend: boolean;
-};
+  }
 
-class Room implements MapSite {
+  class Room implements MapSite {
     constructor(n: number) { }
     enter() { }
     setSide(side: Side, mapSite: MapSite) { };
-}
+  }
 
-abstract class MazeFactory {
+  abstract class MazeFactory {
     makeMaze() {
-        return new Maze();
+      return new Maze();
     }
     makeWall() {
-        return new Wall();
-    };
-    makeDoor(r1: Room, r2: Room) {
-        return new Door(r1, r2);
-    };
-    makeRoom(n: number) {
-        return new Room(n);
+      return new Wall();
     }
-}
+    makeDoor(r1: Room, r2: Room) {
+      return new Door(r1, r2);
+    }
+    makeRoom(n: number) {
+      return new Room(n);
+    }
+  }
 
-function createMaze(mazeFactory: MazeFactory) {
+  function createMaze(mazeFactory: MazeFactory) {
     let maze = mazeFactory.makeMaze();
     let r1 = mazeFactory.makeRoom(1);
     let r2 = mazeFactory.makeRoom(2);
@@ -54,59 +56,60 @@ function createMaze(mazeFactory: MazeFactory) {
     r1.setSide(Side.West, door);
 
     return maze;
-}
+  }
 
-class EnchantedRoom extends Room {
+  class EnchantedRoom extends Room {
     constructor(n: number) {
-        super(n);
+      super(n);
     }
     setSide(side: Side, mapSite: MapSite) { }
     enter() { }
-}
+  }
 
 
-class EnchantedDoor extends Door {
+  class EnchantedDoor extends Door {
     constructor(r1: Room, r2: Room) {
-        super(r1, r2);
+      super(r1, r2);
     }
-}
+  }
 
-class EnchantedMazeFactory extends MazeFactory {
+  class EnchantedMazeFactory extends MazeFactory {
     makeRoom(n: number) {
-        return new EnchantedRoom(n);
+      return new EnchantedRoom(n);
     }
 
     makeDoor(r1: Room, r2: Room) {
-        return new EnchantedDoor(r1, r2);
+      return new EnchantedDoor(r1, r2);
     }
-}
+  }
 
-class RoomWithABomb extends Room {
+  class RoomWithABomb extends Room {
     constructor(n: number) {
-        super(n);
+      super(n);
     }
-}
+  }
 
-class BombWall extends Wall {
+  class BombWall extends Wall {
     constructor() {
-        super();
+      super();
     }
-}
+  }
 
-class BombMazeFactory extends MazeFactory {
+  class BombMazeFactory extends MazeFactory {
     makeRoom(n: number) {
-        return new RoomWithABomb(n);
+      return new RoomWithABomb(n);
     }
 
     makeWall() {
-        return new BombWall();
+      return new BombWall();
     }
+  }
+
+
+  let mazeFactory1: MazeFactory = new EnchantedMazeFactory();
+  let mazeFactory2: MazeFactory = new BombMazeFactory();
+
+  createMaze(mazeFactory1);
+
+  createMaze(mazeFactory2);
 }
-
-
-let mazeFactory1: MazeFactory = new EnchantedMazeFactory();
-let mazeFactory2: MazeFactory = new BombMazeFactory();
-
-createMaze(mazeFactory1);
-
-createMaze(mazeFactory2);
