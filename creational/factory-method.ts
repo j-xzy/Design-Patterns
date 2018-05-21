@@ -91,7 +91,7 @@ namespace FactoryMethod {
   }
 
   let mazeGame1 = new MazeGame();
-  let mazeGame2= new MazeGame();
+  let mazeGame2= new BombMazeGame();
   mazeGame1.createMaze();
   mazeGame2.createMaze();
 }

@@ -9,6 +9,8 @@
    - [Singleton](#singleton)
 
 2. [结构型模式(Structural)](#结构型模式structural)
+
+   - [Adapter](#adapter)
 3. [行为型模式(Behavioral)](#行为型模式behavioral)
 
 ## 创建型模式(creational)
@@ -79,7 +81,19 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 
 ## 结构型模式(Structural)
 
-todo...
+结构型模式涉及到如何组合*类*和*对象*以获得更大的结构。因为可以在运行时刻改变对象组合关系，所以对象*组合方式*具有更大的灵活性。
+
+## [Adapter](https://github.com/wu38607/Design-Patterns/blob/master/structural/adapter.ts)
+
+意图:
+
+将一个类的接口包装成客户希望的另一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
+
+适用性:
+
+- 你想使用一个已经存在的类，而它的接口不符合你的需求
+- 你想创建一个可以复用的类，该类可以与其它不相关的类或不可预见的类协同工作
+- (仅适用于对象Adapter)你想使用一些已经存在的子类，但是不可能对每一个都进行子类化以匹配它们的接口。对象匹配器可以匹配它的父类接口。
 
 ## 行为型模式(Behavioral)
 
