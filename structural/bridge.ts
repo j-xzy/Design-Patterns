@@ -14,19 +14,37 @@ namespace Bridge {
   abstract class WindowImp {
     abstract open(): void;
     abstract close(): void;
-    abstract DeviceRect(left: number, right: number, top: number, bottom: number): void;
+    abstract DeviceRect(x1: number, y1: number, x2: number, y2: number): void;
   }
 
   class WindowImpXP extends WindowImp {
     open() { /* ... */ }
     close() { /* ... */ }
-    DeviceRect(left: number, right: number, top: number, bottom: number) {/* ... */ }
+    DeviceRect(x1: number, y1: number, x2: number, y2: number) {
+      let left = Math.min(x1, x2);
+      let right = Math.max(x1, x2);
+      let top = Math.min(y1, y2);
+      let bottom = Math.max(y1, y2);
+      this.drawRectangle(left, right, top, bottom);
+    }
+    drawRectangle(left: number, right: number, top: number, bottom: number) {
+      /**/
+    }
   }
 
   class WindowImp10 extends WindowImp {
     open() { /* ... */ }
     close() { /* ... */ }
-    DeviceRect(left: number, right: number, top: number, bottom: number) {/* ... */ }
+    DeviceRect(x1: number, y1: number, x2: number, y2: number) {
+      let left = Math.round(Math.min(x1, x2));
+      let right = Math.round(Math.max(x1, x2));
+      let top = Math.round(Math.min(y1, y2));
+      let bottom = Math.round(Math.max(y1, y2));
+      this.drawRectangle10(left, right, top, bottom);
+    }
+    drawRectangle10(left: number, right: number, top: number, bottom: number) {
+      /**/
+    }
   }
 
   class Window10Factory extends WindowFactory {
@@ -72,21 +90,7 @@ namespace Bridge {
 
   class ApplicationWindow extends Window {
     drawRect(pt1: Point, pt2: Point) {
-      let left = Math.min(pt1.x, pt2.x);
-      let right = Math.max(pt1.x, pt2.x);
-      let top = Math.min(pt1.y, pt2.y);
-      let bottom = Math.max(pt1.y, pt2.y);
-      this.getWindowImp().DeviceRect(left, right, top, bottom);
-    }
-  }
-
-  class IconWindow extends Window {
-    drawRect(pt1: Point, pt2: Point) {
-      let left = Math.round(Math.min(pt1.x, pt2.x));
-      let right = Math.round(Math.max(pt1.x, pt2.x));
-      let top = Math.round(Math.min(pt1.y, pt2.y));
-      let bottom = Math.round(Math.max(pt1.y, pt2.y));
-      this.getWindowImp().DeviceRect(left, right, top, bottom);
+      this.getWindowImp().DeviceRect(pt1.x, pt1.y, pt2.x, pt2.y);
     }
   }
 }
