@@ -11,6 +11,7 @@
 2. [结构型模式(Structural)](#结构型模式structural)
 
    - [Adapter](#adapter)
+   - [Bridge](#Bridge)
 3. [行为型模式(Behavioral)](#行为型模式behavioral)
 
 ## 创建型模式(creational)
@@ -94,6 +95,16 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 - 你想使用一个已经存在的类，而它的接口不符合你的需求
 - 你想创建一个可以复用的类，该类可以与其它不相关的类或不可预见的类协同工作
 - (仅适用于对象Adapter)你想使用一些已经存在的子类，但是不可能对每一个都进行子类化以匹配它们的接口。对象匹配器可以匹配它的父类接口。
+
+## [Bridge](https://github.com/wu38607/Design-Patterns/blob/master/structural/bridge.ts)
+
+意图:
+
+将抽象部分与它的实现部分分离，使它们可以独立地变化。
+
+适用性:
+
+- 你不希望在抽象和它的实现部分之间有一个固定的绑定关系。例如在程序运行时刻实现部分应该是可以被切换或选择的。
 
 ## 行为型模式(Behavioral)
 
