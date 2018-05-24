@@ -14,7 +14,9 @@
    - [Bridge](#bridge)
    - [Composite](#composite)
    - [Decorator](#decorator)
-   
+   - [Facade](#facade)
+   - [Flyweight](#flyweight)
+
 3. [行为型模式(Behavioral)](#行为型模式behavioral)
 
 ## 创建型模式(creational)
@@ -87,7 +89,7 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 
 结构型模式涉及到如何组合*类*和*对象*以获得更大的结构。因为可以在运行时刻改变对象组合关系，所以对象*组合方式*具有更大的灵活性。
 
-## [Adapter](https://github.com/wu38607/Design-Patterns/blob/master/structural/adapter.ts)
+### [Adapter](https://github.com/wu38607/Design-Patterns/blob/master/structural/adapter.ts)
 
 意图:
 
@@ -99,7 +101,7 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 - 你想创建一个可以复用的类，该类可以与其它不相关的类或不可预见的类协同工作
 - (仅适用于对象Adapter)你想使用一些已经存在的子类，但是不可能对每一个都进行子类化以匹配它们的接口。对象匹配器可以匹配它的父类接口。
 
-## [Bridge](https://github.com/wu38607/Design-Patterns/blob/master/structural/bridge.ts)
+### [Bridge](https://github.com/wu38607/Design-Patterns/blob/master/structural/bridge.ts)
 
 意图:
 
@@ -110,7 +112,7 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 - 你不希望在抽象和它的实现部分之间有一个固定的绑定关系。例如在程序运行时刻实现部分应该是可以被切换或选择的。
 - 类的抽象以及它的实现都应该可以通过生成子类的方式加以扩充。这时Bridge模式使你可以对不同的抽象接口和实现部分进行组合，并且分别对它们进行扩充。
 
-## [Composite](https://github.com/wu38607/Design-Patterns/blob/master/structural/composite.ts)
+### [Composite](https://github.com/wu38607/Design-Patterns/blob/master/structural/composite.ts)
 
 意图:
 
@@ -121,7 +123,7 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 - 你想表示对象的部分-整体层次结构
 - 你希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。
 
-## [Decorator](https://github.com/wu38607/Design-Patterns/blob/master/structural/decorator.ts)
+### [Decorator](https://github.com/wu38607/Design-Patterns/blob/master/structural/decorator.ts)
 
 意图:
 
@@ -133,6 +135,29 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 - 处理那些可以撤销的职责
 - 但不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩张，为支持每一种组合将会产生大量的子类，使得子类数目呈爆炸性增长。另一种情况可能是因为类定义被隐藏，或类定义不能用于生成子类。
 
+### [Facade](https://github.com/wu38607/Design-Patterns/blob/master/structural/facade.ts)
+
+意图:
+
+为子系统中的一组接口提供一个一致的界面，Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
+
+适用性:
+
+- 当你要为一个复杂的子系统提供一个简单的接口时
+- 客户程序与抽象类的实现部分之间存在着巨大的依赖性。引入Facade将这个子系统与客户以其其它子系统分离，可以提高子系统的独立性和可移植性
+- 当你需要构建一个层次结构的子系统时，你可以让它们仅通过facade进行通讯，从而简化它们之间的依赖性
+
+### [Flyweight](https://github.com/wu38607/Design-Patterns/blob/master/structural/flyweight.ts)
+
+意图:
+
+运用共享技术有效地支持大量细腻度的对象。
+
+适用性:
+
+- 一个程序使用了大量的对象
+- 由于使用了大量的对象，造成了很大的存储开销
+- 对象大多数状态都可变为外部状态
 
 ## 行为型模式(Behavioral)
 
