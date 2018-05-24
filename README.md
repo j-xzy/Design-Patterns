@@ -11,7 +11,9 @@
 2. [结构型模式(Structural)](#结构型模式structural)
 
    - [Adapter](#adapter)
-   - [Bridge](#Bridge)
+   - [Bridge](#bridge)
+   - [Composite](#composite)
+
 3. [行为型模式(Behavioral)](#行为型模式behavioral)
 
 ## 创建型模式(creational)
@@ -106,6 +108,17 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 
 - 你不希望在抽象和它的实现部分之间有一个固定的绑定关系。例如在程序运行时刻实现部分应该是可以被切换或选择的。
 - 类的抽象以及它的实现都应该可以通过生成子类的方式加以扩充。这时Bridge模式使你可以对不同的抽象接口和实现部分进行组合，并且分别对它们进行扩充。
+
+## [Composite](https://github.com/wu38607/Design-Patterns/blob/master/structural/composite.ts)
+
+意图:
+
+将对象组合成树形结构以表示“部分-整体”的层次结构。Composite使得用户对单个对象和组合对象的使用具有一致性。
+
+适用性:
+
+- 你想表示对象的部分-整体层次结构
+- 你希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。
 
 ## 行为型模式(Behavioral)
 
