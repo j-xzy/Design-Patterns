@@ -13,7 +13,8 @@
    - [Adapter](#adapter)
    - [Bridge](#bridge)
    - [Composite](#composite)
-
+   - [Decorator](#decorator)
+   
 3. [行为型模式(Behavioral)](#行为型模式behavioral)
 
 ## 创建型模式(creational)
@@ -119,6 +120,19 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 
 - 你想表示对象的部分-整体层次结构
 - 你希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。
+
+## [Decorator](https://github.com/wu38607/Design-Patterns/blob/master/structural/decorator.ts)
+
+意图:
+
+动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更加灵活。与Componsite不同，Componsite是**同等对待**组件的，目的在于**聚合**。Decorator中是**区别对待**组件，仅给对象添加一些**额外的职责**。
+
+适用性:
+
+- 在不影响其它对象的情况下，以动态、透明的方式给单个对象添加职责
+- 处理那些可以撤销的职责
+- 但不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩张，为支持每一种组合将会产生大量的子类，使得子类数目呈爆炸性增长。另一种情况可能是因为类定义被隐藏，或类定义不能用于生成子类。
+
 
 ## 行为型模式(Behavioral)
 
