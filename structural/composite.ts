@@ -86,12 +86,12 @@ namespace Composite {
   }
 
   let disk = new Disk();
-  let borad = new Board();
-  let computerCase = new ComputerCase();
-
   let diskName = disk.name;
-  let boradName = borad.name;
 
+  let borad = new Board();
+  let boradName = borad.name;
   borad.add(disk);
+
+  let computerCase = new ComputerCase();
   computerCase.add(borad);
 }
