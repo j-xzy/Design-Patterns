@@ -16,6 +16,7 @@
    - [Decorator](#decorator)
    - [Facade](#facade)
    - [Flyweight](#flyweight)
+   - [Proxy](#proxy)
 
 3. [行为型模式(Behavioral)](#行为型模式behavioral)
 
@@ -158,6 +159,19 @@ Builder模式与Abstract Factory模式类似，也是给基于抽象类、可以
 - 一个程序使用了大量的对象
 - 由于使用了大量的对象，造成了很大的存储开销
 - 对象大多数状态都可变为外部状态
+
+### [Proxy](https://github.com/wu38607/Design-Patterns/blob/master/structural/proxy.ts)
+
+意图:
+
+为其他对象提供一种代理以控制对这个对象的访问。
+
+适用性:
+
+- 远程代理，为一个对象在不同的地址空间提供局部代表
+- 虚代理，根据需要创建开销很大的对象
+- 保护代理，控制对原始对象的访问
+- 智能指引,取代了简单的指针，它在访问对象时执行一些附加操作
 
 ## 行为型模式(Behavioral)
 
