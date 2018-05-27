@@ -23,6 +23,9 @@
    - [Chain_of_responsibility](#chain_of_responsibility)
    - [Command](#command)
    - [Interpreter](#interpreter)
+   - [Iterator](#iterator)
+   - [Mediator](#mediator)
+
 ## 创建型模式(creational)
 
 创建型模式抽象了实例化的过程。它帮助一个系统独立于如何创建、组合和表示它的那些对象。
@@ -205,6 +208,31 @@ Builder模式与Abstract Factory模式类似,也是给基于抽象类、可以�
 - 在不同的时刻指定、排列和执行请求
 - 支持取消操作、修改日志
 
-### Interpreter
+### Interpreter 
 
 todo...
+
+### [Iterator](https://github.com/wu38607/Design-Patterns/blob/master/behavior/iterator.ts)
+
+意图：
+
+提供一种方法访问一个聚合对象中的各个元素，而又不暴露该对象的内部表示。
+
+适用性：
+
+- 访问一个聚合对象的内容而无需暴露它的内部表示
+- 支持聚合对象的多种遍历
+- 为遍历不同的聚合结构提供一个统一的接口
+
+### [Mediator](https://github.com/wu38607/Design-Patterns/blob/master/behavior/mediator.ts)
+
+意图：
+
+用中介对象来封装一系列的对象交互。中介者使各个对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。
+
+适用性：
+
+-  一组对象以定义良好但是复杂的方式进行通信。产生的相互依赖关系结构混乱且难以理解
+- 一个对象引用其它很多对象并且直接与这些对象通信，导致难以复用该对象
+- 想定制一个分布在多个类中的行为，而又不想生成太多子类
+
