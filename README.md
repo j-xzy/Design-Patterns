@@ -25,6 +25,7 @@
    - [Interpreter](#interpreter)
    - [Iterator](#iterator)
    - [Mediator](#mediator)
+   - [Memento](#Memento)
 
 ## 创建型模式(creational)
 
@@ -236,3 +237,6 @@ todo...
 - 一个对象引用其它很多对象并且直接与这些对象通信，导致难以复用该对象
 - 想定制一个分布在多个类中的行为，而又不想生成太多子类
 
+### Memento
+
+todo...
