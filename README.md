@@ -20,13 +20,16 @@
 
 3. [行为型模式(Behavioral)](#行为型模式behavioral)
   
-   - [Chain_of_responsibility](#chain_of_responsibility)
+   - [Chain-of-responsibility](#chain-of-responsibility)
    - [Command](#command)
    - [Interpreter](#interpreter)
    - [Iterator](#iterator)
    - [Mediator](#mediator)
    - [Memento](#memento)
    - [Observer](#observer)
+   - [Strategy](#strategy)
+   - [Template-method](#template-method)
+   - [Visitor](#visitor)
 
 ## 创建型模式(creational)
 
@@ -185,7 +188,7 @@ Builder模式与Abstract Factory模式类似,也是给基于抽象类、可以�
 
 行为模式涉及到算法和对象间职责的分配。行为模式不仅描述对象或类,还描述了它们之间的通讯方式。这些模式刻划了在运行时难以跟踪的复杂的控制流。它们将你的注意力从控制流转移到对象间的联系方式上来。
 
-### [Chain_of_responsibility](https://github.com/wu38607/Design-Patterns/blob/master/behavior/chain_of_responsibility.ts)
+### [Chain-of-responsibility](https://github.com/wu38607/Design-Patterns/blob/master/behavior/chain-of-responsibility.ts)
 
 意图:
 
@@ -253,3 +256,39 @@ todo...
 - 当一个抽象模型有两个方面 , 其中一个方面依赖于另一方面。将这二者封装在独立的对象中以使它们可以各自独立地改变和复用
 - 当对一个对象的改变需要同时改变其它对象 , 而不知道具体有多少对象有待改变
 - 当一个对象必须通知其它对象，而它又不能假定其它对象是谁。换言之 , 你不希望这些对象是紧密耦合的
+
+### [Strategy](https://github.com/wu38607/Design-Patterns/blob/master/behavior/strategy.ts)
+
+意图：
+
+定义一系列的算法，把它们一个个封装起来，并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。
+
+适用性：
+
+- 许多相关的类仅仅是行为有异。“策略”提供了一种用多个行为中的一个行为来配置一个类的方法
+- 需要使用一个算法的不同变体。例如，你可能会定义一些反映不同的空间 、时间权衡的算法。
+- 算法使用客户不应该知道的数据。可使用策略模式以避免暴露复杂的、与算法相关的数据结构。
+
+### [Template-method](https://github.com/wu38607/Design-Patterns/blob/master/behavior/template-method.ts)
+
+意图：
+
+定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。template-method使得子可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+
+适用性：
+
+- 一次性实现一个算法的不变的部分，并将可变的行为留给子类来实现
+- 各子类中公共的行为应被提取出来并集中到一个公共父类中以避免代码重复
+- 控制子类扩展。模板方法只在特定点调用"hook"操作，这样就只允许在这些点进行扩展
+
+### [Visitor](https://github.com/wu38607/Design-Patterns/blob/master/behavior/visitor.ts)
+
+意图：
+
+表示一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。
+
+适用性：
+
+- 一个对象结构包含很多类对象，它们有不同的接口，而你想对这些对象实施一些依赖于其具体类的操作
+- 需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而你想避免让这些操作“污染”这些对象的类。Visitor使得你可以将相关的操作集中起来定义在一个类中。当该对象结构被很多应用共享时，用Visitor模式让每个应用仅包含需要用到的操作
+- 定义对象结构的类很少改变，但经常需要在此结构上定义新的操作。改变对象结构类需要重定义对所有访问者的接口，这可能需要很大的代价。如果对象结构类经常改变，那么可能还是在这些类中定义这些操作较好
