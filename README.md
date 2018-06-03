@@ -27,14 +27,10 @@
    - [Mediator](#mediator)
    - [Memento](#memento)
    - [Observer](#observer)
-<<<<<<< HEAD
    - [Strategy](#strategy)
    - [Template-method](#template-method)
    - [Visitor](#visitor)
 
-=======
-   - [State](#state)
->>>>>>> 992a40e233538e539143df398502ef91d24d382a
 ## 创建型模式(creational)
 
 创建型模式抽象了实例化的过程。它帮助一个系统独立于如何创建、组合和表示它的那些对象。
